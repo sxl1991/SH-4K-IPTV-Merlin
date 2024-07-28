@@ -36,15 +36,17 @@ echo
 #脚本提示
 echo 正添加IPTV运行脚本
 #移动到脚本目录
-cd /jffs/configs/dnsmasq.d
+#cd /jffs/configs/dnsmasq.d
+#386重启会清空dnsmasq.d
+cd /jffs/configs
 #删除旧dnsmasq配置文件
 echo 正在删除旧文件
-rm -rf dns.conf
+rm -rf dnsmasq.conf.add
 #下载开机运行脚本
 echo 正在下载新文件
-wget -q --no-check-certificate https://raw.githubusercontent.com/PatrikYang/SH-4K-IPTV-Merlin/master/dns.conf
+wget -O dnsmasq.conf.add -q --no-check-certificate https://raw.githubusercontent.com/PatrikYang/SH-4K-IPTV-Merlin/master/dns.conf
 #设置权限
-chmod -R 0644 dns.conf
+chmod -R 0644 dnsmasq.conf.add
 #完成提示
 echo 成功
 
